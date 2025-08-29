@@ -26,3 +26,4 @@
 - GET api/books/comics → lista de comics páginados
 - GET api/books/superheroes → lista de super heróis páginados
 - GET api/books/movies?name= → lista filmes filtrados por nome
+- Exemplo: `http://localhost:8080/api/books/movies?name=the%20lord%20of%20the%20rings`
