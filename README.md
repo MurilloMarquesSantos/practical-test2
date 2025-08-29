@@ -16,7 +16,7 @@
 
 ✅ Listar todos os super-heróis
 
-✅ Procurar filmes por nomes (Ordem alfabética + páginados)
+✅ Procurar filmes por nome (Ordem alfabética + páginados)
 
 ✅ Todas as chamadas páginadas
 
