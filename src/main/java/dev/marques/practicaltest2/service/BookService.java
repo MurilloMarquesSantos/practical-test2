@@ -6,6 +6,8 @@ import dev.marques.practicaltest2.dto.PagedResponse;
 import dev.marques.practicaltest2.dto.SearchResponse;
 import org.springframework.stereotype.Service;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -45,7 +47,10 @@ public class BookService {
     public PagedResponse<BookDto> searchByTitle(String title, int page, int size, boolean sortAsc) {
         int olPage = Math.max(1, page);
 
-        SearchResponse resp = client.search("title:" + title, olPage, size, null);
+        String query = URLEncoder.encode(title, StandardCharsets.UTF_8);
+
+        SearchResponse resp = client.search(query, olPage, size, null);
+
 
         List<BookDto> list = Optional.ofNullable(resp.getDocs()).orElse(List.of())
                 .stream()
