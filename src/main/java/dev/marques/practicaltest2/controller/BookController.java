@@ -29,20 +29,20 @@ public class BookController {
     }
 
     @GetMapping("/movies")
-    public PagedResponse<BookDto> movies(
+    public ResponseEntity<PagedResponse<BookDto>> movies(
             @RequestParam String name,
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "20") int size,
             @RequestParam(defaultValue = "true") boolean sortAsc) {
-        return bookService.searchByTitle(name + " movie", page, size, sortAsc);
+        return ResponseEntity.ok(bookService.searchByTitle(name + " movie", page, size, sortAsc));
     }
 
     @GetMapping("/superheroes")
-    public PagedResponse<BookDto> superheroes(
+    public ResponseEntity<PagedResponse<BookDto>> superheroes(
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "20") int size,
             @RequestParam(defaultValue = "true") boolean sortAsc) {
-        return bookService.searchBySubject("superheroes", page, size, sortAsc);
+        return ResponseEntity.ok(bookService.searchBySubject("superheroes", page, size, sortAsc));
     }
 
 }

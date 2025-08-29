@@ -37,4 +37,5 @@ public class OpenLibraryClient {
                 restTemplate.exchange(uri.toUriString(), HttpMethod.GET, entity, SearchResponse.class);
         return resp.getBody();
     }
+
 }
