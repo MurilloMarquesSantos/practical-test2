@@ -1,0 +1,4 @@
+server:
+  port: 8080
+open-library:
+  base-url: https://openlibrary.org
